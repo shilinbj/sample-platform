@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        username: ${nacos.username}
+        password: ${nacos.password}
+      config:
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        username: ${nacos.username}
+        password: ${nacos.password}
+        shared-configs:
+          - gateway.yml
+          - global-end-points.yml
+
+nacos:
+  namespace: sample
+  server-addr: localhost:8848
+  username: nacos
+  password: nacos

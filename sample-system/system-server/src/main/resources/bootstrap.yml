@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: system-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        username: ${nacos.username}
+        password: ${nacos.password}
+      config:
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        username: ${nacos.username}
+        password: ${nacos.password}
+        shared-configs:
+          - data-id: system-server.yml
+            refresh: true
+          - data-id: redis.yml
+            refresh: false
+          - data-id: springdoc.yml
+            refresh: true
+          - data-id: mysql-r2dbc.yml
+            refresh: false
+
+
+nacos:
+  server-addr: localhost:8848
+  namespace: sample
+  username: nacos
+  password: nacos
+
+logging:
+  level:
+    org.springframework.r2dbc: debug
