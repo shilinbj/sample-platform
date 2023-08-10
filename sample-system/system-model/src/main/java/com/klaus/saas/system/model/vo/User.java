@@ -27,6 +27,9 @@ public class User extends BaseVO {
 	@Schema(description = "username")
 	private String username;
 
+	@Schema(description = "name")
+	private String name;
+
 	@NotBlank(message = "The password can't be empty.")
 	@Schema(description = "password")
 	private String password;

@@ -18,7 +18,10 @@ import java.time.LocalDateTime;
 public class BaseVO {
 
 	@Schema(description = "Created user id.")
-	private String createdBy;
+	private long createdBy;
+
+	@Schema(description = "Created user name.")
+	private String createdName;
 
 	@Schema(description = "Created time.")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
@@ -27,7 +30,10 @@ public class BaseVO {
 	private LocalDateTime createdAt;
 
 	@Schema(description = "Modified user id.")
-	private String modifiedBy;
+	private long modifiedBy;
+
+	@Schema(description = "Modified user name.")
+	private String modifiedName;
 
 	@Schema(description = "Modified time.")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")

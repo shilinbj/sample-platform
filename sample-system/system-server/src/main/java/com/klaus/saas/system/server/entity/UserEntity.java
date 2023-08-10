@@ -47,6 +47,7 @@ public class UserEntity extends BaseEntity {
 
     public UserEntity(User user) {
         this.username = user.getUsername();
+        this.name = user.getName();
         this.email = user.getEmail();
         this.password = user.getPassword();
         this.mobile = user.getMobile();
@@ -59,6 +60,7 @@ public class UserEntity extends BaseEntity {
         return User.builder()
                 .id(this.id)
                 .username(this.username)
+                .name(this.name)
                 .password(this.password)
                 .email(this.email)
                 .mobile(this.mobile)

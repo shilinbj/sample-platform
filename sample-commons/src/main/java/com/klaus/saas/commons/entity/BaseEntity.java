@@ -30,9 +30,11 @@ public abstract class BaseEntity {
 
 	public <T extends BaseVO> T toVO() {
 		BaseVO vo = convert();
-		vo.setCreatedBy(this.createdName);
+		vo.setCreatedBy(this.createdBy);
+		vo.setCreatedName(this.createdName);
 		vo.setCreatedAt(this.createdAt);
-		vo.setModifiedBy(this.modifyedName);
+		vo.setModifiedBy(this.modifyedBy);
+		vo.setModifiedName(this.modifyedName);
 		vo.setModifiedAt(this.modifyedAt);
 		return (T) vo;
 	}
